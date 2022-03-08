@@ -1,6 +1,9 @@
 # Learn OpenGL In C, not C++
 This code is for those of us who use C instead of C++, for the LearnOpenGL tutorial website.  
   
+YOUTUBE VIDEO - TRIANGLE  
+https://www.youtube.com/watch?v=Hzo3uYei3r0  
+  
 Their license is the creative common license 4. So I am forced to use that license.  
   
 The code is good enough to learn from, and a lot of the code I hand wrote, to get around the C++ only code.  
