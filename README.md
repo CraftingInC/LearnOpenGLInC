@@ -8,7 +8,7 @@ Their license is the creative common license 4. So I am forced to use that licen
   
 The code is good enough to learn from, and a lot of the code I hand wrote, to get around the C++ only code.  
 
-I have converted most of the "Getting Started" folder. More folders to come over time.  
+I have converted the "1. Getting Started" folder. More folders to come over time.  
   
 The C compiler I use is GCC / MinGW 64-Bit. The version I use is from this link :  
 https://nuwen.net/mingw.html  
