@@ -2,8 +2,8 @@
 This code is for those of us who use C instead of C++, for the LearnOpenGL tutorial website.  
 
 I have converted so far :  
-* 1. Getting Started ( FINISHED )  
-* 2. lighting        ( WORKING ON IT )  
+* 1.getting_started ( FINISHED )  
+* 2.lighting &nbsp;&nbsp;&nbsp;&nbsp;( WORKING ON IT )  
   
 YOUTUBE VIDEO - TRIANGLE  
 https://www.youtube.com/watch?v=Hzo3uYei3r0  
