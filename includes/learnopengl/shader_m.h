@@ -161,7 +161,7 @@ void checkCompileErrors(unsigned int shader)
     if (!success)
     {
         glGetProgramInfoLog(shader, 1024, NULL, infoLog);
-        printf("ERROR::PROGRAM_LINKING_ERROR of type: PROGRAM\n%s\n -- --------------------------------------------------- -- ", infoLog);
+        printf("ERROR::PROGRAM_LINKING_ERROR of type: PROGRAM\n%s\n -- --------------------------------------------------- -- \n", infoLog);
     }
 }
 
