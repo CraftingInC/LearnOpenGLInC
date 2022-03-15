@@ -4,7 +4,7 @@ This code is for those of us who use C instead of C++, for the LearnOpenGL tutor
 I have converted so far :  
 * 1.getting_started ( FINISHED )  
 * 2.lighting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( FINISHED )  
-* 7.in_practice &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( WORKING ON IT )  
+* 7.in_practice &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( WORKING ON IT )  
   
   
 YOUTUBE VIDEO - TRIANGLE  
