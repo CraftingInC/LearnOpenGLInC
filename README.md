@@ -2,9 +2,14 @@
 This code is for those of us who use C instead of C++, for the LearnOpenGL tutorial website.  
 
 I have converted so far :  
-* 1.getting_started ( FINISHED )  
-* 2.lighting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( FINISHED )  
-* 7.in_practice &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( WORKING ON IT )  
+* 1.getting_started 
+* 2.lighting 
+* 7.in_practice
+  
+**NOTES**  
+I have been working on a True Type Font code that would fit into the 7.in_practice section. But fonts / text is a lot more complicated then I original thought it would be. So I am unsure yet if I will get that working the way the LearnOpenGL section has described it. When I converted it, it simply woulnd't work, and to this day I am still unsure as to why.  
+With that said, in my github, I have supplied an alternative version of text, that does work in C. Hopefully that will work for your needs.  
+Over time I hope to add OpenGL 4.5+ code to my github. It just will not be part of this repo.  
   
   
 YOUTUBE VIDEO - TRIANGLE  
