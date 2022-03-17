@@ -7,8 +7,7 @@ I have converted so far :
 * 7.in_practice
   
 **NOTES**  
-I have been working on a True Type Font code that would fit into the 7.in_practice section. But fonts / text is a lot more complicated then I original thought it would be. So I am unsure yet if I will get that working the way the LearnOpenGL section has described it. When I converted it, it simply woulnd't work, and to this day I am still unsure as to why.  
-With that said, in my github, I have supplied an alternative version of text, that does work in C. Hopefully that will work for your needs.  
+Finally got text rendering working. It's in the 7.in_practice folder.  
 Over time I hope to add OpenGL 4.5+ code to my github. It just will not be part of this repo.  
   
   
@@ -38,4 +37,5 @@ https://github.com/JoeyDeVries/LearnOpenGL
 EXAMPLE Using C  
   
 ![progress](progress1.png)  
+![progress](progress2.png)  
   
