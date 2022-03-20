@@ -241,20 +241,40 @@ void RenderText(unsigned int program, int textSize, ALLGLYPHS_T characters, floa
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
+    float tempX = x;
+    float tempY = y;
+    y = (SCR_HEIGHT - textSize) - tempY;
+    GLYPH_T* character2;
+
     for (int i = 0; i < characters.size; i++)
     {
         GLYPH_T* character = characters.items[i];
+        if(i - 1 >= 0) {character2 = characters.items[i - 1];}
+
+        if(character->value == '\n')
+        {
+            y -= textSize;
+            x = tempX;
+            continue;
+        } else if(i - 1 >= 0 && character2->value == ' ' && x > (SCR_WIDTH - (textSize * 8)))
+        {
+            y -= textSize;
+            x = tempX;
+        }
+
         unsigned int texture = character->texture;
 
-        float ypos = (SCR_HEIGHT - y) - textSize;
+        GLfloat xpos = x + character->bearing_left * scale;
+        GLfloat ypos = y - (character->height - character->bearing_top) * scale;
 
         GLfloat w = character->width * scale;
         GLfloat h = character->height * scale;
 
-        draw_mesh(program, texture, x, ypos, w, h, VBO, color);
+        draw_mesh(program, texture, xpos, ypos, w, h, VBO, color);
 
         x += (character->advance >> 6) * scale;
     }
 
     glDeleteBuffers(1, &VBO);
 }
+

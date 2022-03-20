@@ -7,6 +7,7 @@
 #include <stdio.h>         // printf()   FILE*
 #include <stdlib.h>        // malloc()
 
+unsigned int LoadEmbeddedShaders(const char* vertex_shader_text, const char* fragment_shader_text);
 unsigned int LoadShaders(const char* vertexPath, const char* fragmentPath);
 void useShader(unsigned int programID);
 void setBool(unsigned int programID, const char* name, bool value);
@@ -15,6 +16,49 @@ void setFloat(unsigned int programID, const char* name, float value);
 int  loadShaderFromFile(const char* fileName, int shaderType);
 void checkCompileErrors(unsigned int shader);
 void ShaderCleanUp(unsigned int programID);
+
+unsigned int LoadEmbeddedShaders(const char* vertex_shader_text, const char* fragment_shader_text)
+{
+    GLuint vertex_shader, fragment_shader, program;
+
+    int success;
+    char infoLog[512];
+
+    vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertex_shader, 1, &vertex_shader_text, NULL);
+    glCompileShader(vertex_shader);
+    glGetShaderiv(vertex_shader, GL_COMPILE_STATUS, &success);
+    if(!success)
+    {
+        printf("Vertex Shader Error\n");
+        glGetShaderInfoLog(vertex_shader, 512, NULL, infoLog);
+        perror(infoLog);
+    }
+
+    fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragment_shader, 1, &fragment_shader_text, NULL);
+    glCompileShader(fragment_shader);
+    glGetShaderiv(fragment_shader, GL_COMPILE_STATUS, &success);
+    if(!success)
+    {
+        printf("Fragment Shader Error\n");
+        glGetShaderInfoLog(fragment_shader, 512, NULL, infoLog);
+        perror(infoLog);
+    }
+
+    program = glCreateProgram();
+    glAttachShader(program, vertex_shader);
+    glAttachShader(program, fragment_shader);
+    glLinkProgram(program);
+    glGetProgramiv(program, GL_LINK_STATUS, &success);
+    if(!success)
+    {
+        glGetProgramInfoLog(program, 512, NULL, infoLog);
+        perror(infoLog);
+    }
+
+    return program;
+}
 
 // constructor generates the shader on the fly
 // ------------------------------------------------------------------------
