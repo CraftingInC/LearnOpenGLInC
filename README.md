@@ -4,11 +4,13 @@ This code is for those of us who use C instead of C++, for the LearnOpenGL tutor
 I have converted so far :  
 * 1.getting_started 
 * 2.lighting 
+* 3.model_loading  
 * 7.in_practice
   
 **NOTES**  
-Finally got text rendering working. It's in the 7.in_practice folder.  
-Over time I hope to add OpenGL 4.5+ code to my github. It just will not be part of this repo.  
+* Finally got text rendering working. It's in the 7.in_practice folder.  
+* Over time I hope to add OpenGL 4.5+ code to my github. It just will not be part of this repo.  
+* I was finally able to get Assimp working with the help of Nick Wessing's source code. With that I was able to figure out how assimp works. I had never used assimp before. Nick's Github : https://github.com/nwessing/ Also this means I was not using the original shader files that came from LearnOpenGL. However the backpack asset is being used.  
   
   
 YOUTUBE VIDEO - TRIANGLE  
@@ -38,4 +40,6 @@ EXAMPLE Using C
   
 ![progress](progress1.png)  
 ![progress](progress2.png)  
+![progress](progress3.png)  
+  
   
