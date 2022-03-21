@@ -4,6 +4,13 @@
 #include <cglm/cglm.h>
 #include <glad/glad.h>
 
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
+
+#include <assimp/cimport.h>
+#include <assimp/postprocess.h>
+#include <assimp/scene.h>
+
 #include <string.h>
 #include <stdio.h>
 
@@ -36,8 +43,11 @@ typedef struct Mesh {
 	uint32_t EBO;
 } Mesh;
 
+typedef uint32_t TextureImage;
+
 void mesh_draw(Mesh *mesh, unsigned int programID);
 void mesh_setup(Mesh *mesh);
+TextureImage initTexture(const char* imageName);
 
 void mesh_setup(Mesh *mesh)
 {
@@ -99,6 +109,43 @@ void mesh_draw(Mesh *mesh, unsigned int programID)
 	glBindVertexArray(mesh->VAO);
 	glDrawElements(GL_TRIANGLES, mesh->numIndices, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
+}
+
+TextureImage initTexture(const char* imageName)
+{
+	stbi_set_flip_vertically_on_load(true);
+
+	int width, height, nrChannels;
+	unsigned char* data = stbi_load(imageName, &width, &height, &nrChannels, 0);
+	if (!data) {
+		printf("Failed to load texture : %s\n", imageName);
+		return 0;
+	}
+
+	GLenum format = GL_RGB;
+	if (nrChannels == 1) {
+		format = GL_RED;
+	}
+	else if (nrChannels == 3) {
+		format = GL_RGB;
+	}
+	else if (nrChannels == 4) {
+		format = GL_RGBA;
+	}
+
+	TextureImage texture;
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	stbi_image_free(data);
+	return texture;
 }
 
 #endif // MESH_H
