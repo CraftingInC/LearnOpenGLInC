@@ -10,7 +10,7 @@ I have converted so far :
 **NOTES**  
 * Finally got text rendering working. It's in the 7.in_practice folder.  
 * Over time I hope to add OpenGL 4.5+ code to my github. It just will not be part of this repo.  
-* I was finally able to get Assimp working with the help of Nick Wessing's source code. With that I was able to figure out how assimp works. I had never used assimp before. Nick's Github : https://github.com/nwessing/ Also this means I was not using the original shader files that came from LearnOpenGL. However the backpack asset is being used.  
+* I was finally able to get Assimp working with the help of Nick Wessing's source code. With that I was able to figure out how assimp works. I had never used assimp before. Nick's Github : https://github.com/nwessing/ Also this means I was not using the original shader files that came from LearnOpenGL. However the backpack asset is being used.  Also, the Assimp library supplied here works with codeblocks / mingwx64 ( gcc ). It should work with Visual Studio as well. But I have not tested that.  
   
   
 YOUTUBE VIDEO - TRIANGLE  
