@@ -17,12 +17,12 @@
 #include <learnopengl/shader.h>
 
 typedef struct aiString aiString;
-typedef float vec2[2];
+typedef float vec2f[2];
 
 typedef struct Vertex {
-	vec3 position;
-	vec3 normal;
-	vec2 texCoords;
+	vec3  position;
+	vec3  normal;
+	vec2f texCoords;
 } Vertex;
 
 typedef struct Texture {
