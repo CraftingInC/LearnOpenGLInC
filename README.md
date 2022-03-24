@@ -17,6 +17,7 @@ I have converted so far :
 * 7.in_practice
   
 **NOTES**  
+* Do to the libraries used to get this to work, C99 is the oldest version that you can use. C89 and C90 failed because of those libraries.  
 * I tried to stick fairly close to the original author's libraries and folder structures, so that it would be easier to follow along his tutorials.  
 * I Finally got text rendering working. It's in the 7.in_practice folder.  
 * Over time I hope to add OpenGL 4.5+ code to my github. It just will not be part of this repo.  
