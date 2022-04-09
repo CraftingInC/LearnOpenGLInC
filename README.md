@@ -16,6 +16,9 @@ I have converted so far :
 * 4.advanced_opengl  
 * 7.in_practice
   
+#NEWS ABOUT ASSIMP  --- UPDATED April 9th 2022
+  After a lot of trial and error and figuring things out, I soon realized after uninstalling the windows SDK, that the ASSIMP version that LearnOpenGL is using is a DEBUG version. How do I know this ? Because it requires the 2015 runtime libraries, but has the D in the DLL library name. Meaning, he should have compiled assimp as a RELEASE version, NOT a debug version. So the runtime libraries did nothing to resolve the problem. It requires the end user to install the SDK. A HUGE no-no, and it is why so many people are having issues trying to run his version of assimp. Talk about a BONEHEAD mistake! I have tried recompiling ASSIMP, but since it required so many changes, that didn't work with LearnOpenGL's source code, I said "fuck it", and I found an already pre-compiled version of assimp that DOES work. Assimp 3.1.1 works and I am able to use it with GCC ( MinGW ) on windows just fine. Now, for the side news, this assimp 3.1.1 version requires the 2012 runtime libraries. It is also a RELEASE version of assimp. So far, I have had no issues getting this to run. I DID include the 2012 redistributables, just in case you didn't have it.  Just make sure to update your INCLUDE and LIB path to the 3.1.1 version of assimp that I supplied with this project. I kept the old one from LearnOpenGL, just in case you wanted to see for yourself that it is the same one from his github, and that it's the DEBUG version.  Good luck.  
+  
 **NOTES**  
 * Do to the libraries used to get this to work, C99 is the oldest version that you can use. C89 and C90 failed because of those libraries.  
 * I tried to stick fairly close to the original author's libraries and folder structures, so that it would be easier to follow along his tutorials.  
