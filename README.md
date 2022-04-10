@@ -30,6 +30,9 @@ I have converted so far :
 YOUTUBE VIDEO - TRIANGLE  
 https://www.youtube.com/watch?v=Hzo3uYei3r0  
   
+YOUTUBE VIDEO - ASSIMP FIXED  
+https://www.youtube.com/watch?v=QXnSJR7068U  
+  
 The code is good enough to learn from, and a lot of the code I hand wrote, to get around the C++ only code.  
 
 The C compiler I use is GCC / MinGW 64-Bit. The version I use is from this link :  
